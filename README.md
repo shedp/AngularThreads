@@ -18,6 +18,6 @@ Install dependencies
 ## Technologies
 
 - Angular
-  NestJS
-  MongoDB
-  Mongoose
+- NestJS
+- MongoDB
+- Mongoose
