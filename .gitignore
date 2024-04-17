@@ -71,7 +71,7 @@
 */*.sublime-workspace
 
 # Miscellaneous
-8/.angular/cache
+*/.angular/cache
 */.sass-cache/
 */connect.lock
 */coverage
