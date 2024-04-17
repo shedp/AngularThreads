@@ -34,6 +34,7 @@
 */!.vscode/tasks.json
 */!.vscode/launch.json
 */!.vscode/extensions.json
+*/.history/*
 
 # dotenv environment variable files
 */.env
@@ -54,3 +55,30 @@
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 */report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+
+# Compiled output
+*/out-tsc
+*/bazel-out
+
+# IDEs and editors
+*/.idea/
+*/.project
+*/.classpath
+*/.c9/
+*/*.launch
+*/*.settings/
+*/*.sublime-workspace
+
+# Miscellaneous
+8/.angular/cache
+*/.sass-cache/
+*/connect.lock
+*/coverage
+*/libpeerconnection.log
+*/testem.log
+*/typings
+
+# System files
+*/.DS_Store
+*/Thumbs.db
