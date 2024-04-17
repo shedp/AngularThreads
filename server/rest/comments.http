@@ -14,7 +14,6 @@ content-Type: application/json
 
 ###
 
-GET http://localhost:3000/comments?parentId=66196313821aa87c1444f70c
- HTTP/1.1
+GET http://localhost:3000/comments?parentId=66196313821aa87c1444f70c/ HTTP/1.1
 
 ###
