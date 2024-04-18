@@ -2,25 +2,17 @@
   <header class="h-12 flex justify-between items-center p-8 bg-gray-50">
     <span>Threads</span>
     <nav class="flex">
-      <div class="flex gap-4">
-        <div routerLink="/">
-          <img
-            class="rounded-full hover:shadow-md rounded-full cursor-pointer w-10 h-10 border-[2px] border-gray-200 hover:border-gray-300"
-            src="assets/home.png"
-            alt="home"
-          />
+      <div class="flex gap-8">
+        <div routerLink="/" class="cursor-pointer svg-icon">
+          <img src="assets/estate.svg" alt="home" width="30" height="30" />
         </div>
-        <div routerLink="user">
-          <img
-            class="rounded-full hover:shadow-md rounded-full cursor-pointer w-10 h-10 border-[2px] border-gray-200 hover:border-gray-300"
-            src="assets/placeholder.jpg"
-            alt="placeholder"
-          />
+        <div routerLink="user" class="cursor-pointer svg-icon">
+          <img src="assets/user.svg" alt="home" width="30" height="30" />
         </div>
       </div>
     </nav>
   </header>
-  <main class="p- 10">
+  <main class="p-10 justify-center">
     <router-outlet></router-outlet>
   </main>
 </div>
