@@ -18,19 +18,29 @@
       <p class="mt-1 text-xs font-medium text-gray-300">Claire's post</p>
     </div>
     <div class="flow-root mt-2">
-      <ul class="-m-1 flex flex-wrap justify-items-end">
+      <ul class="-m-1 flex flex-wrap justify-end">
         <li class="p-1 leading-none hover:underline">
           <a href="#" class="text-xs font-medium text-gray-300"> Like </a>
         </li>
 
-        <li class="p-1 leading-none hover:underline">
+        <li
+          class="p-1 leading-none hover:underline"
+          (click)="toggleReplyExpanded()"
+        >
           <a href="#" class="text-xs font-medium text-gray-300"> Reply </a>
+        </li>
+        <li class="p-1 leading-none hover:underline">
+          <a href="#" class="text-xs font-medium text-rose-400"> Delete </a>
         </li>
       </ul>
     </div>
   </div>
+  <ul class="mt-4 space-y-2">
+    <app-reply-form *ngIf="isReplyExpanded"></app-reply-form>
+  </ul>
 
   <ul class="mt-4 space-y-2">
+    <li *ngIf="commentsIsMore">Show more</li>
     <li>
       <a
         href="#"
@@ -43,8 +53,8 @@
           consequuntur deleniti, unde ab ut in!
         </p>
       </a>
+      <app-comment-options></app-comment-options>
     </li>
-
     <li>
       <a
         href="#"
@@ -58,5 +68,6 @@
         </p>
       </a>
     </li>
+    <app-comment-options></app-comment-options>
   </ul>
 </article>
