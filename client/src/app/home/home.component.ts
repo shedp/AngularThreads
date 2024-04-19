@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommentComponent } from '../components/comment/comment.component';
+import { CommentService } from '../services/comment.service';
+import { Comment } from '../interfaces/comment.interface';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +11,15 @@ import { CommentComponent } from '../components/comment/comment.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  commentService = inject(CommentService);
+  comments = signal<Comment[]>([]);
+  ngOnInit(): void {
+    this.getComments();
+  }
+  getComments() {
+    this.commentService.getComments().subscribe((comment) => {
+      this.comments.set(comment);
+    });
+  }
+}
