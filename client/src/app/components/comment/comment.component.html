@@ -25,7 +25,7 @@
 
         <li
           class="p-1 leading-none hover:underline"
-          (click)="toggleReplyExpanded()"
+          (click)="commentService.toggleReplyExpanded()"
         >
           <a href="#" class="text-xs font-medium text-gray-300"> Reply </a>
         </li>
@@ -36,7 +36,7 @@
     </div>
   </div>
   <ul class="mt-4 space-y-2">
-    <app-reply-form *ngIf="isReplyExpanded"></app-reply-form>
+    <app-reply-form *ngIf="commentService.isReplyExpanded"></app-reply-form>
   </ul>
 
   <ul class="mt-4 space-y-2">

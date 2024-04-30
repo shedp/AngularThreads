@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommentService } from '../../services/comment.service';
 
 @Component({
   selector: 'app-reply-form',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './reply-form.component.html',
   styleUrl: './reply-form.component.css',
 })
-export class ReplyFormComponent {}
+export class ReplyFormComponent {
+  constructor(public commentService: CommentService) {}
+}

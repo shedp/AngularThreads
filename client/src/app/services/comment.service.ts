@@ -15,4 +15,10 @@ export class CommentService {
     }
     return this.http.get<Comment[]>(url);
   }
+
+  isReplyExpanded = false;
+
+  toggleReplyExpanded() {
+    this.isReplyExpanded = !this.isReplyExpanded;
+  }
 }

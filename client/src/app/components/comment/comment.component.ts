@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommentOptionsComponent } from '../comment-options/comment-options.component';
 import { ReplyFormComponent } from '../reply-form/reply-form.component';
 import { CommonModule } from '@angular/common';
+import { CommentService } from '../../services/comment.service';
 
 @Component({
   selector: 'app-comment',
@@ -11,13 +12,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './comment.component.css',
 })
 export class CommentComponent {
-  isReplyExpanded = false;
+  constructor(public commentService: CommentService) {}
   commentsIsMore = false;
   comments = ['hereisacoments', 'here is another ocmments', 'a thrid'];
-
-  toggleReplyExpanded = () => {
-    this.isReplyExpanded = !this.isReplyExpanded;
-  };
 
   showMoreComments = () => {
     if (this.comments.length > 3) {
