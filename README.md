@@ -6,14 +6,19 @@ This was created following the [tutorial](https://www.youtube.com/watch?v=cAj6gz
 
 ## Installation
 
-Download or clone this repo
-`git clone`
+- Download or clone this repo
+  `git clone`
+- Navigate to the server directory
+  `cd server`
+- Install dependencies
+  `npm install`
+- Add a .env file and define a MongoDB url
+  `DB_URL = YOUR_URL`
 
-Navigate to the server directory
-`cd server`
-
-Install dependencies
-`npm install`
+- Navigate to the client directory
+  `cd ../client`
+- Install dependencies
+  `npm install`
 
 ## Technologies
 

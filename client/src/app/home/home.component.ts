@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
     this.getComments();
   }
   getComments() {
-    this.commentService.getComments().subscribe((comment) => {
-      this.comments.set(comment);
+    this.commentService.getComments().subscribe((comments) => {
+      this.comments.set(comments);
     });
   }
 }

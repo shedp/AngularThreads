@@ -8,10 +8,11 @@ import { Comment } from '../interfaces/comment.interface';
 })
 export class CommentService {
   http = inject(HttpClient);
-  getComments() {
+
+  getComments(parentId: string = '') {
     let url = `${environment.apiBaseUrl}/comments`;
     if (parent) {
-      url += `?parentId=${parent}`;
+      url += `?parentId=${parentId}`;
     }
     return this.http.get<Comment[]>(url);
   }

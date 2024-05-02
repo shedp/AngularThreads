@@ -7,30 +7,32 @@
     />
 
     <div>
-      <h3 class="text-lg font-medium text-white">Claire Mac</h3>
+      <h3 class="text-lg font-medium text-white">{{ comment.user.name }}</h3>
     </div>
   </div>
   <div class="mt-4">
-    <div
-      href="#"
-      class="block h-full rounded-lg border border-gray-700 p-4 hover:border-white"
-    >
-      <p class="mt-1 text-xs font-medium text-gray-300">Claire's post</p>
+    <div href="#" class="block h-full rounded-lg border border-gray-700 p-4">
+      <p class="mt-1 text-xs font-medium text-gray-300">
+        {{ comment.text }}
+      </p>
     </div>
     <div class="flow-root mt-2">
-      <ul class="-m-1 flex flex-wrap justify-end">
+      <ul class="-m-1 flex flex-wrap justify-end gap-1">
         <li class="p-1 leading-none hover:underline">
-          <a href="#" class="text-xs font-medium text-gray-300"> Like </a>
+          <span class="text-xs font-medium text-gray-300"
+            >{{ comment.likes }}
+          </span>
+          <a href="#" class="text-xs font-medium text-gray-300"> Likes </a>
         </li>
 
         <li
           class="p-1 leading-none hover:underline"
           (click)="commentService.toggleReplyExpanded()"
         >
-          <a href="#" class="text-xs font-medium text-gray-300"> Reply </a>
+          <a href="#" class="text-xs font-medium text-rose-500"> Reply </a>
         </li>
         <li class="p-1 leading-none hover:underline">
-          <a href="#" class="text-xs font-medium text-rose-400"> Delete </a>
+          <a href="#" class="text-xs font-medium text-gray-300"> Delete </a>
         </li>
       </ul>
     </div>
@@ -39,35 +41,16 @@
     <app-reply-form *ngIf="commentService.isReplyExpanded"></app-reply-form>
   </ul>
 
-  <ul class="mt-4 space-y-2">
-    <li *ngIf="commentsIsMore">Show more</li>
-    <li>
-      <a
-        href="#"
-        class="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600"
-      >
-        <strong class="font-medium text-white">Project A</strong>
-
-        <p class="mt-1 text-xs font-medium text-gray-300">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          consequuntur deleniti, unde ab ut in!
-        </p>
-      </a>
-      <app-comment-options></app-comment-options>
-    </li>
-    <li>
-      <a
-        href="#"
-        class="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600"
-      >
-        <strong class="font-medium text-white">Project B</strong>
-
-        <p class="mt-1 text-xs font-medium text-gray-300">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-          cumque saepe sit.
-        </p>
-      </a>
-    </li>
-    <app-comment-options></app-comment-options>
+  <ul class="mt-4 space-y-2 flex flex-col gap-2">
+    <app-comment-box
+      *ngFor="let nestedComment of nestedComments()"
+      [comment]="nestedComment"
+    ></app-comment-box>
   </ul>
+  <div
+    class="text-xs font-medium text-gray-300 text-center mt-2"
+    *ngIf="nestedComments() && nestedComments().length > 3"
+  >
+    Show More
+  </div>
 </article>

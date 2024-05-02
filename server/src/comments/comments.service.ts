@@ -32,7 +32,7 @@ export class CommentsService {
     try {
       return this.commentModel
         .find({ parent: parentId })
-        .populate('user', 'parent')
+        .populate('user')
         .exec();
     } catch (error) {
       throw new BadRequestException('Failed to get comments', {
