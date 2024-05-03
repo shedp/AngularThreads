@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommentService } from '../../services/comment.service';
 
 @Component({
@@ -9,5 +9,8 @@ import { CommentService } from '../../services/comment.service';
   styleUrl: './reply-form.component.css',
 })
 export class ReplyFormComponent {
+  @Input()
+  parentId!: string | null;
+
   constructor(public commentService: CommentService) {}
 }

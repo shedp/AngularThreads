@@ -19,7 +19,7 @@ export class CommentService {
 
   isReplyExpanded = false;
 
-  toggleReplyExpanded() {
+  toggleReplyExpanded(parentId: string = '') {
     this.isReplyExpanded = !this.isReplyExpanded;
   }
 }

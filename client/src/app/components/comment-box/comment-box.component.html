@@ -1,10 +1,27 @@
 <li>
-  <a
-    href="#"
-    class="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600"
-  >
+  <a href="#" class="block h-full rounded-lg border border-gray-700 p-4">
     <strong class="font-medium text-white">{{ comment.user.name }}</strong>
 
     <p class="mt-1 text-xs font-medium text-gray-300">{{ comment.text }}</p>
   </a>
+  <div class="flow-root mt-2">
+    <ul class="-m-1 flex flex-wrap justify-end gap-1">
+      <li class="p-1 leading-none hover:underline">
+        <span class="text-xs font-medium text-gray-300"
+          >{{ comment.likes }}
+        </span>
+        <a href="#" class="text-xs font-medium text-gray-300"> Likes </a>
+      </li>
+
+      <li
+        class="p-1 leading-none hover:underline"
+        (click)="commentService.toggleReplyExpanded(comment._id)"
+      >
+        <a href="#" class="text-xs font-medium text-rose-500"> Reply </a>
+      </li>
+      <li class="p-1 leading-none hover:underline">
+        <a href="#" class="text-xs font-medium text-gray-300"> Delete </a>
+      </li>
+    </ul>
+  </div>
 </li>

@@ -1,4 +1,4 @@
-<article class="rounded-xl border border-gray-700 bg-gray-800 p-4">
+<article class="rounded-xl border border-gray-700 bg-gray-800 p-4 w-full">
   <div class="flex items-center gap-4">
     <img
       alt=""
@@ -27,7 +27,7 @@
 
         <li
           class="p-1 leading-none hover:underline"
-          (click)="commentService.toggleReplyExpanded()"
+          (click)="commentService.toggleReplyExpanded(comment._id)"
         >
           <a href="#" class="text-xs font-medium text-rose-500"> Reply </a>
         </li>
@@ -38,7 +38,10 @@
     </div>
   </div>
   <ul class="mt-4 space-y-2">
-    <app-reply-form *ngIf="commentService.isReplyExpanded"></app-reply-form>
+    <app-reply-form
+      *ngIf="commentService.isReplyExpanded"
+      [parentId]="comment._id"
+    ></app-reply-form>
   </ul>
 
   <ul class="mt-4 space-y-2 flex flex-col gap-2">
