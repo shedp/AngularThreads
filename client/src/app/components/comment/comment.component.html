@@ -43,14 +43,19 @@
 
   <ul class="mt-4 space-y-2 flex flex-col gap-2">
     <app-comment-box
-      *ngFor="let nestedComment of nestedComments()"
+      *ngFor="
+        let nestedComment of commentsIsMore
+          ? nestedComments()
+          : nestedComments().slice(0, 3)
+      "
       [comment]="nestedComment"
     ></app-comment-box>
   </ul>
   <div
-    class="text-xs font-medium text-gray-300 text-center mt-2"
+    class="text-xs font-medium text-gray-300 text-center mt-2 cursor-pointer"
     *ngIf="nestedComments() && nestedComments().length > 3"
+    (click)="toggleComments()"
   >
-    Show More
+    {{ commentsIsMore ? "Show Less" : "Show More" }}
   </div>
 </article>

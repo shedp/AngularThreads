@@ -18,7 +18,6 @@ export class CommentComponent {
 
   constructor(public commentService: CommentService) {}
   commentsIsMore = false;
-
   nestedComments = signal<Comment[]>([]);
 
   ngOnInit(): void {
@@ -28,5 +27,9 @@ export class CommentComponent {
     this.commentService.getComments(this.comment._id).subscribe((comments) => {
       this.nestedComments.set(comments);
     });
+  }
+
+  toggleComments() {
+    this.commentsIsMore = !this.commentsIsMore;
   }
 }

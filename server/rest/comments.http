@@ -6,10 +6,9 @@ POST http://localhost:3000/comments/ HTTP/1.1
 content-Type: application/json
 
 {
-    "text": "well done!",
+    "text": "a thrid comment",
     "likes": 0,
-    "userId": "661958a291b0a638556df89d",
-    "parentId": "66196313821aa87c1444f70c"
+    "userId": "661958a291b0a638556df89d"
 }
 
 ###
