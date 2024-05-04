@@ -10,7 +10,6 @@ import { CommentBoxComponent } from '../comment-box/comment-box.component';
   standalone: true,
   imports: [ReplyFormComponent, CommonModule, CommentBoxComponent],
   templateUrl: './comment.component.html',
-  styleUrl: './comment.component.css',
 })
 export class CommentComponent {
   @Input()
