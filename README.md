@@ -23,6 +23,14 @@ This was created following the [tutorial](https://www.youtube.com/watch?v=cAj6gz
 ## Technologies
 
 - Angular
+- Tailwind CSS
 - NestJS
 - MongoDB
 - Mongoose
+
+## Features
+
+- View and post comments
+- Reply to other comments
+- View comments by user
+- Delete comments
